@@ -1,0 +1,5 @@
+wheel
+#Adafruit_BBIO
+paho-mqtt
+colorlog
+asyncio_mqtt
