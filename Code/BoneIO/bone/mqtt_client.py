@@ -1,4 +1,4 @@
-"""Provide an MQTT client for connecting to the ozwdaemon via MQTT broker."""
+"""Provide an MQTT client for providing BoneIO MQTT broker."""
 import asyncio
 import json
 import logging
@@ -149,8 +149,6 @@ class MQTTClient:
         """Connect and subscribe to manager topics."""
         print("subscribe")
         async with AsyncExitStack() as stack:
-            # Keep track of the asyncio tasks that we create, so that
-            # we can cancel them on exit.
             tasks: Set[asyncio.Task] = set()
 
             # Connect to the MQTT broker.
