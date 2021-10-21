@@ -10,11 +10,9 @@ from asyncio_mqtt import Client as AsyncioClient, MqttError
 import paho.mqtt.client as mqtt
 from paho.mqtt.properties import Properties
 from paho.mqtt.subscribeoptions import SubscribeOptions
+from .const import PAHO
 
 _LOGGER = logging.getLogger(__name__)
-
-PAHO_MQTT_LOGGER = logging.getLogger("paho.mqtt.client")
-TOPIC_BONEIO = "boneio"
 
 
 class MQTTClient:
@@ -32,7 +30,7 @@ class MQTTClient:
         if "client_id" not in client_options:
             client_options["client_id"] = mqtt.base62(uuid.uuid4().int, padding=22)
         if "logger" not in client_options:
-            client_options["logger"] = PAHO_MQTT_LOGGER
+            client_options["logger"] = logging.getLogger(PAHO)
         client_options["clean_session"] = True
         self.client_options = client_options
         self.asyncio_client: AsyncioClient = None
@@ -119,7 +117,7 @@ class MQTTClient:
 
     def send_message(self, topic: str, payload: Union[str, dict]) -> None:
         """Send a message from the manager options."""
-        to_publish = (topic, json.dumps(payload))
+        to_publish = (topic, json.dumps(payload) if type(payload) == dict else payload)
         self.publish_queue.put_nowait(to_publish)
 
     async def _handle_publish(self) -> None:
@@ -147,7 +145,6 @@ class MQTTClient:
 
     async def _subscribe_manager(self, manager: any) -> None:
         """Connect and subscribe to manager topics."""
-        print("subscribe")
         async with AsyncExitStack() as stack:
             tasks: Set[asyncio.Task] = set()
 
@@ -169,10 +166,7 @@ class MQTTClient:
             )
             tasks.add(messages_task)
 
-            # Note that we subscribe *after* starting the message loggers.
-            # Otherwise, we may miss retained messages.
-            topic = f"{manager.options.topic_prefix}#"
-            print("topic", topic)
+            topic = f"{manager.relay_topic}"
             await self.subscribe(topic)
 
             # Wait for everything to complete (or fail due to, e.g., network errors).
@@ -182,48 +176,6 @@ class MQTTClient:
 async def handle_messages(messages: Any, callback: Callable[[str, str], None]) -> None:
     """Handle messages with callback."""
     async for message in messages:
-        # Note that we assume that the message payload is an
-        # UTF8-encoded string (hence the `bytes.decode` call).
         payload = message.payload.decode()
         _LOGGER.debug("Received message topic: %s, payload: %s", message.topic, payload)
         callback(message.topic, payload)
-
-
-class Options:
-    def __init__(self, send_message, topic_prefix):
-        self.send_message = send_message
-        self.topic_prefix = topic_prefix
-
-
-class Manager:
-    def __init__(self, options):
-        print("start")
-        self.options = options
-
-    def receive_message(self, topic: str, message: str) -> None:
-        print("TOP", topic, message)
-
-
-async def run_client() -> None:
-    """Run client."""
-    client = MQTTClient("mqtt.eclipseprojects.io")
-    options = Options(send_message=client.send_message, topic_prefix=f"{TOPIC_BONEIO}/")
-    manager = Manager(options)
-
-    await client.start_client(manager)
-
-
-def main() -> None:
-    """Run main."""
-    fmt = "%(asctime)s %(levelname)s (%(threadName)s) [%(name)s] %(message)s"
-    logging.basicConfig(format=fmt, level=logging.DEBUG)
-    _LOGGER.info("Starting client.")
-
-    try:
-        asyncio.run(run_client())
-    except KeyboardInterrupt:
-        _LOGGER.info("Exiting client.")
-
-
-if __name__ == "__main__":
-    main()

@@ -1,66 +1,53 @@
-from Adafruit_BBIO import GPIO
+"""GPIO Relay module."""
+from gpiozero import LED
+import asyncio
+from typing import Callable, Union
+from .const import ON, OFF, STATE, RELAY
 
 
-class IORelay:
-
-    relayPin = None
-    hostname = None
-    mqttClient = None
+class GpioRelay:
+    """Represents GPIO Relay output"""
 
     def __init__(
-        self, relayPinParam, hostname, mqttClient
-    ):  # we use global mqttClient - be aware
-        try:
-            self.mqttClient = mqttClient
-            self.hostname = hostname
-            self.relayPin = relayPinParam
+        self,
+        pin: str,
+        send_message: Callable[[str, Union[str, dict]], None],
+        topic_prefix: str,
+    ) -> None:
+        """Initialize Gpio relay."""
+        self._pin = pin
+        self._led = LED(pin)
+        self._send_message = send_message
+        self._relay_topic = f"{topic_prefix}/{RELAY}/"
+        self._loop = asyncio.get_running_loop()
 
-            GPIO.setup(self.relayPin, GPIO.OUT)
-            GPIO.output(self.relayPin, GPIO.LOW)
+    @property
+    def is_active(self) -> str:
+        """Is relay active."""
+        return ON if self._led.is_active else OFF
 
-            stateTopic = hostname + "/relay/" + self.relayPin
-            self.mqttClient.publish(stateTopic, "off", retain=True)
+    @property
+    def pin(self) -> str:
+        """PIN of the relay"""
+        return self._pin
 
-        except Exception as ex:
-            # logging.exception(str(ex))
-            print("IORelay.__init__ error:", str(ex))
+    def turn_on(self) -> None:
+        """Call turn on action."""
+        self._led.on()
+        self._loop.call_soon_threadsafe(self.send_state)
 
-    def set_state(self, relayPin, command):
-        try:
-            if command == "on":
-                GPIO.output(relayPin, GPIO.HIGH)
-            elif command == "off":
-                GPIO.output(relayPin, GPIO.LOW)
+    def turn_off(self) -> None:
+        """Call turn off action."""
+        self._led.off()
+        self._loop.call_soon_threadsafe(self.send_state)
 
-        except Exception as ex:
-            # logging.exception(str(ex))
-            print("IORelay.set_state error:", str(ex))
+    def toggle(self) -> None:
+        """Call toggle action."""
+        self._led.toggle()
+        self._loop.call_soon_threadsafe(self.send_state)
 
-    def on_mqtt_message(self, client, userdata, message):
-        try:
-
-            # Odczyt wartosci true/false jako string
-            state = message.payload.decode("utf-8")
-
-            stateTopic = str(message.topic).replace("/command", "")
-            relayNum = stateTopic.replace(self.hostname + "/relay/", "")
-            # print(relayNum)
-
-            self.set_state(relayNum, state)
-            self.mqttClient.publish(stateTopic, state, retain=True)
-
-        except Exception as ex:
-            # logging.exception(str(ex))
-            print("IORelay.on_mqtt_message error:", str(ex))
-
-    def relay_start(self):
-        try:
-
-            commandTopic = self.hostname + "/relay/" + self.relayPin + "/command"
-            # print(commandTopic)
-            self.mqttClient.on_message = self.on_mqtt_message
-            self.mqttClient.subscribe(commandTopic)
-
-        except Exception as ex:
-            # logging.exception(str(ex))
-            print("IORelay.relay_start error:", str(ex))
+    def send_state(self) -> None:
+        """Send state to Mqtt on action."""
+        self._send_message(
+            topic=f"{self._relay_topic}{self._pin}", payload={STATE: self.is_active}
+        )

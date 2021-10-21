@@ -3,3 +3,5 @@ wheel
 paho-mqtt
 colorlog
 asyncio_mqtt
+gpio
+click
