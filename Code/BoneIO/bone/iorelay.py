@@ -1,8 +1,13 @@
 """GPIO Relay module."""
-from gpiozero import LED
+from Adafruit_BBIO.GPIO import HIGH, LOW
+
 import asyncio
 from typing import Callable, Union
 from .const import ON, OFF, STATE, RELAY
+from .gpio import setup_output, read_input, write_output
+import logging
+
+_LOGGER = logging.getLogger(__name__)
 
 
 class GpioRelay:
@@ -16,15 +21,17 @@ class GpioRelay:
     ) -> None:
         """Initialize Gpio relay."""
         self._pin = pin
-        self._led = LED(pin)
+        setup_output(self._pin)
         self._send_message = send_message
         self._relay_topic = f"{topic_prefix}/{RELAY}/"
         self._loop = asyncio.get_running_loop()
+        _LOGGER.debug("Setup relay with pin %s", self._pin)
 
     @property
     def is_active(self) -> str:
         """Is relay active."""
-        return ON if self._led.is_active else OFF
+        print("Stat", read_input(self.pin, HIGH))
+        return ON if read_input(self.pin) else OFF
 
     @property
     def pin(self) -> str:
@@ -33,17 +40,14 @@ class GpioRelay:
 
     def turn_on(self) -> None:
         """Call turn on action."""
-        self._led.on()
+        print("writing UP state", self.pin, self.is_active)
+        write_output(self.pin, LOW)
         self._loop.call_soon_threadsafe(self.send_state)
 
     def turn_off(self) -> None:
         """Call turn off action."""
-        self._led.off()
-        self._loop.call_soon_threadsafe(self.send_state)
-
-    def toggle(self) -> None:
-        """Call toggle action."""
-        self._led.toggle()
+        print("low state", self.pin, self.is_active)
+        write_output(self.pin, HIGH)
         self._loop.call_soon_threadsafe(self.send_state)
 
     def send_state(self) -> None:

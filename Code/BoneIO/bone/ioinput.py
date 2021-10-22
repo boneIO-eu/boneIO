@@ -1,5 +1,6 @@
 """GPIOInputButton to receive signals."""
-from gpiozero import Button
+from .gpio import setup_input, read_input, edge_detect
+
 from functools import partial
 from typing import Callable
 from datetime import datetime, timedelta
@@ -8,8 +9,8 @@ import asyncio
 from .const import SINGLE, DOUBLE, LONG, ClickTypes
 
 _LOGGER = logging.getLogger(__name__)
-DEBOUNCE_DURATION = timedelta(seconds=1)
-LONG_PRESS_DURATION = timedelta(seconds=1)
+DEBOUNCE_DURATION = timedelta(seconds=0.2)
+LONG_PRESS_DURATION = timedelta(seconds=0.7)
 
 
 class GpioInputButton:
@@ -24,15 +25,15 @@ class GpioInputButton:
         self._pin = pin
         self._loop = asyncio.get_running_loop()
         self._press_callback = press_callback
-        self._button = Button(pin=self._pin, bounce_time=0.005)
+        setup_input(self._pin)
+        edge_detect(self._pin, callback=self._handle_press, bounce=25)
         self._first_press_timestamp = None
         self._is_long_press = False
         self._second_press_timestamp = None
         self._second_check = False
-        self._button.when_pressed = self.handle_press
         _LOGGER.debug("Configured listening for input pin %s", self._pin)
 
-    def handle_press(self) -> None:
+    def _handle_press(self, pin) -> None:
         """Handle the button press callback"""
         # Ignore if we are in a long press
         if self._is_long_press:
@@ -44,9 +45,9 @@ class GpioInputButton:
             self._first_press_timestamp is not None
             and now - self._first_press_timestamp < DEBOUNCE_DURATION
         ):
-            self._second_press_timestamp = now
+            return
 
-        # Second click debounce.
+        # Second click debounce. Just in case.
         if (
             self._second_press_timestamp is not None
             and now - self._second_press_timestamp < DEBOUNCE_DURATION
@@ -55,6 +56,8 @@ class GpioInputButton:
 
         if not self._first_press_timestamp:
             self._first_press_timestamp = now
+        elif not self._second_press_timestamp:
+            self._second_press_timestamp = now
 
         self._loop.call_soon_threadsafe(
             self._loop.call_later,
@@ -62,10 +65,14 @@ class GpioInputButton:
             self.check_press_length,
         )
 
+    @property
+    def is_pressed(self):
+        return read_input(self._pin)
+
     def check_press_length(self) -> None:
         """Check if it's a single, double or long press"""
         # Check if button is still pressed
-        if self._button.is_pressed:
+        if self.is_pressed:
             # Schedule a new check
             self._loop.call_soon_threadsafe(
                 self._loop.call_later,
@@ -108,7 +115,7 @@ class GpioInputButton:
                         partial(self._press_callback, DOUBLE, self._pin)
                     )
 
-                else:
+                elif self._first_press_timestamp:
                     _LOGGER.debug("One click event, call callback")
                     self._loop.call_soon_threadsafe(
                         partial(self._press_callback, SINGLE, self._pin)

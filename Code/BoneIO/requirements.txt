@@ -5,3 +5,4 @@ asyncio_mqtt
 gpio
 gpiozero
 click
+Adafruit_BBIO
