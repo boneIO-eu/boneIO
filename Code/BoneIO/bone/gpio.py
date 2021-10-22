@@ -4,7 +4,7 @@ from Adafruit_BBIO import GPIO
 def setup_output(pin):
     """Set up a GPIO as output."""
 
-    GPIO.setup(pin, GPIO.OUT, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(pin, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
 
 
 def setup_input(pin, pull_mode="UP"):

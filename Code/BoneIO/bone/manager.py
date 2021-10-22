@@ -2,6 +2,10 @@ from .ioinput import GpioInputButton
 from .iorelay import GpioRelay
 from .const import SINGLE, RELAY, ON, OFF, ONLINE, STATE, ClickTypes
 from typing import Callable, Optional, Union, List
+import logging
+import asyncio
+
+_LOGGER = logging.getLogger(__name__)
 
 
 def ha_availibilty_message(topic, relay_id):
@@ -18,7 +22,7 @@ def ha_availibilty_message(topic, relay_id):
         },
         "name": f"Relay {relay_id}",
         "payload_off": OFF,
-        "payload_on": OFF,
+        "payload_on": ON,
         "state_topic": f"{topic}/{RELAY}/{relay_id}",
         "unique_id": f"{topic}{RELAY}{relay_id}",
         "value_template": "{{ value_json.state }}",
@@ -43,6 +47,7 @@ class Manager:
         self._topic_prefix = topic_prefix
         self.relay_topic = f"{topic_prefix}/{RELAY}/+/set"
         self._input_pins = input_pins
+        loop = asyncio.get_event_loop()
 
         self.output = {
             gpio: GpioRelay(
@@ -52,9 +57,14 @@ class Manager:
         }
         self._relay_input_map = relay_input_map
         for out in self.output.values():
-            out.send_state()
             if ha_discovery:
+                _LOGGER.debug("Sending HA discovery.")
                 self.send_ha_autodiscovery(relay=out.pin, prefix=ha_discovery_prefix)
+            loop.call_soon_threadsafe(
+                loop.call_later,
+                0.5,
+                out.send_state,
+            )
 
         self.buttons = [
             GpioInputButton(pin=pin, press_callback=self.press_callback)
@@ -62,6 +72,7 @@ class Manager:
         ]
 
         self.send_message(topic=f"{topic_prefix}/{STATE}", payload=ONLINE)
+        print("topic", topic_prefix)
 
     def press_callback(self, x: ClickTypes, inpin: str) -> None:
         """Press callback to use in input gpio.

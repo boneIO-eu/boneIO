@@ -22,6 +22,7 @@ class GpioRelay:
         """Initialize Gpio relay."""
         self._pin = pin
         setup_output(self._pin)
+        write_output(self.pin, LOW)
         self._send_message = send_message
         self._relay_topic = f"{topic_prefix}/{RELAY}/"
         self._loop = asyncio.get_running_loop()
@@ -30,8 +31,8 @@ class GpioRelay:
     @property
     def is_active(self) -> str:
         """Is relay active."""
-        print("Stat", read_input(self.pin, HIGH))
-        return ON if read_input(self.pin) else OFF
+        print("Stat", read_input(self.pin))
+        return ON if read_input(self.pin, on_off=HIGH) else OFF
 
     @property
     def pin(self) -> str:
@@ -41,13 +42,13 @@ class GpioRelay:
     def turn_on(self) -> None:
         """Call turn on action."""
         print("writing UP state", self.pin, self.is_active)
-        write_output(self.pin, LOW)
+        write_output(self.pin, HIGH)
         self._loop.call_soon_threadsafe(self.send_state)
 
     def turn_off(self) -> None:
         """Call turn off action."""
         print("low state", self.pin, self.is_active)
-        write_output(self.pin, HIGH)
+        write_output(self.pin, LOW)
         self._loop.call_soon_threadsafe(self.send_state)
 
     def send_state(self) -> None:
