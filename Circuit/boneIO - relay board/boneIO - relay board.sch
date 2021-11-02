@@ -2927,8 +2927,8 @@ Wire Notes Line
 	700  14350 22800 14350
 Text Notes 18650 2300 0    197  ~ 39
 MCP23017
-Text Notes 9200 1250 0    197  ~ 39
-boneIO - relay board 24x16A v0.2
+Text Notes 9600 1250 0    197  ~ 39
+boneIO - relay board v0.2
 Wire Wire Line
 	6750 100  6750 400 
 Connection ~ 6750 100 
