@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name RelayCH8-rescue)(type Legacy)(uri E:/RelayCH8/RelayCH8-rescue.lib)(options "")(descr ""))
-  (lib (name boneIO_input-board_v0.2-rescue)(type Legacy)(uri "${KIPRJMOD}/boneIO_input board_v0.2-rescue.lib")(options "")(descr ""))
-)

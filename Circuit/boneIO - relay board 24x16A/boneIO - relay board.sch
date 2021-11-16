@@ -64,7 +64,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 656F8EFF
 P 18050 9900
 F 0 "K18" H 18700 10165 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 18700 10074 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 18700 10074 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 19200 10000 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 19200 9900 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 19200 9800 50  0001 L CNN "Description"
@@ -103,7 +103,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 656F8F21
 P 18050 8150
 F 0 "K17" H 18700 8415 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 18700 8324 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 18700 8324 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 19200 8250 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 19200 8150 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 19200 8050 50  0001 L CNN "Description"
@@ -143,7 +143,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 656F8F47
 P 18050 13450
 F 0 "K20" H 18700 13715 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 18700 13624 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 18700 13624 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 19200 13550 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 19200 13450 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 19200 13350 50  0001 L CNN "Description"
@@ -186,7 +186,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 656F8F69
 P 18050 11700
 F 0 "K19" H 18700 11965 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 18700 11874 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 18700 11874 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 19200 11800 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 19200 11700 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 19200 11600 50  0001 L CNN "Description"
@@ -233,7 +233,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F0EC
 P 13300 9900
 F 0 "K14" H 13950 10165 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 13950 10074 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 13950 10074 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 14450 10000 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 14450 9900 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 14450 9800 50  0001 L CNN "Description"
@@ -266,7 +266,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F0CB
 P 13300 8150
 F 0 "K13" H 13950 8415 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 13950 8324 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 13950 8324 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 14450 8250 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 14450 8150 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 14450 8050 50  0001 L CNN "Description"
@@ -296,7 +296,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F0A7
 P 13300 13450
 F 0 "K16" H 13950 13715 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 13950 13624 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 13950 13624 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 14450 13550 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 14450 13450 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 14450 13350 50  0001 L CNN "Description"
@@ -327,7 +327,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F085
 P 13300 11700
 F 0 "K15" H 13950 11965 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 13950 11874 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 13950 11874 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 14450 11800 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 14450 11700 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 14450 11600 50  0001 L CNN "Description"
@@ -359,7 +359,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F056
 P 10800 11700
 F 0 "K11" H 11450 11965 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 11450 11874 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 11450 11874 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 11950 11800 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 11950 11700 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 11950 11600 50  0001 L CNN "Description"
@@ -388,7 +388,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F034
 P 10800 13450
 F 0 "K12" H 11450 13715 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 11450 13624 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 11450 13624 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 11950 13550 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 11950 13450 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 11950 13350 50  0001 L CNN "Description"
@@ -418,7 +418,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557F00E
 P 10800 8150
 F 0 "K9" H 11450 8415 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 11450 8324 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 11450 8324 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 11950 8250 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 11950 8150 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 11950 8050 50  0001 L CNN "Description"
@@ -449,7 +449,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6557EFEC
 P 10800 9900
 F 0 "K10" H 11450 10165 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 11450 10074 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 11450 10074 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 11950 10000 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 11950 9900 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 11950 9800 50  0001 L CNN "Description"
@@ -473,7 +473,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 650CB5D8
 P 6100 9900
 F 0 "K6" H 6750 10165 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 6750 10074 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 6750 10074 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 7250 10000 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 7250 9900 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 7250 9800 50  0001 L CNN "Description"
@@ -504,7 +504,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 650CB5FA
 P 6100 8150
 F 0 "K5" H 6750 8415 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 6750 8324 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 6750 8324 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 7250 8250 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 7250 8150 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 7250 8050 50  0001 L CNN "Description"
@@ -532,7 +532,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 650CB61E
 P 6100 13450
 F 0 "K8" H 6750 13715 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 6750 13624 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 6750 13624 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 7250 13550 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 7250 13450 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 7250 13350 50  0001 L CNN "Description"
@@ -563,7 +563,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 650CB640
 P 6100 11700
 F 0 "K7" H 6750 11965 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 6750 11874 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 6750 11874 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 7250 11800 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 7250 11700 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 7250 11600 50  0001 L CNN "Description"
@@ -599,7 +599,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 64E84F3A
 P 3600 11700
 F 0 "K3" H 4250 11965 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 4250 11874 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 4250 11874 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 4750 11800 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 4750 11700 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 4750 11600 50  0001 L CNN "Description"
@@ -630,7 +630,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 64E84F18
 P 3600 13450
 F 0 "K4" H 4250 13715 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 4250 13624 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 4250 13624 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 4750 13550 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 4750 13450 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 4750 13350 50  0001 L CNN "Description"
@@ -658,7 +658,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6266FFCC
 P 3600 8150
 F 0 "K1" H 4250 8415 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 4250 8324 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 4250 8324 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 4750 8250 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 4750 8150 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 4750 8050 50  0001 L CNN "Description"
@@ -691,7 +691,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6266FFF0
 P 3600 9900
 F 0 "K2" H 4250 10165 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 4250 10074 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 4250 10074 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 4750 10000 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 4750 9900 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 4750 9800 50  0001 L CNN "Description"
@@ -2166,7 +2166,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 61994846
 P 21200 11700
 F 0 "K23" H 21850 11965 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 21850 11874 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 21850 11874 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 22350 11800 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 22350 11700 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 22350 11600 50  0001 L CNN "Description"
@@ -2197,7 +2197,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6199485A
 P 21200 13450
 F 0 "K24" H 21850 13715 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 21850 13624 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 21850 13624 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 22350 13550 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 22350 13450 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 22350 13350 50  0001 L CNN "Description"
@@ -2225,7 +2225,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 6199486C
 P 21200 8150
 F 0 "K21" H 21850 8415 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 21850 8324 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 21850 8324 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 22350 8250 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 22350 8150 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 22350 8050 50  0001 L CNN "Description"
@@ -2258,7 +2258,7 @@ L boneIO---relay-board-rescue:RM85-2011-35-1005-MK-boneIO---relay-board-rescue K
 U 1 1 61994881
 P 21200 9900
 F 0 "K22" H 21850 10165 50  0000 C CNN
-F 1 "RM85-2011-35-1005" H 21850 10074 50  0000 C CNN
+F 1 "RM85-2011-35-1024" H 21850 10074 50  0000 C CNN
 F 2 "boneIO - RM85:RM852011351005_1" H 22350 10000 50  0001 L CNN
 F 3 "https://www.tme.eu/Document/59558cd216efa4c8744bca8622313f6c/e_RM85.pdf" H 22350 9900 50  0001 L CNN
 F 4 "Relpol PCB Mount Non-Latching Relay, 5V dc Coil 16 A Non-Latching Relay" H 22350 9800 50  0001 L CNN "Description"

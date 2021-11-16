@@ -1,8 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP YAAJ_DCDC_StepDown_LM2596
-D module : adjustable step down module 3.2V-40V to 1.25V-35V 3A
-K module stepdown step down buck converter DCDC DC
-$ENDCMP
-#
-#End Doc Library

@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name boneIO---relay-board-rescue)(type Legacy)(uri "C:/Users/Kamil/OneDrive/Dokumenty/GitHub/boneIO-1/Circuit/boneIO - relay board/boneIO - relay board-rescue.lib")(options "")(descr ""))
-  (lib (name RadioESP32_v2.0-rescue)(type Legacy)(uri C:/Users/Kamil/OneDrive/Dokumenty/KiCad/Projekty/RadioESP32_v2.0/RadioESP32_v2.0-rescue.lib)(options "")(descr ""))
-)
