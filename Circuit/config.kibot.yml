@@ -1,0 +1,15 @@
+kibot:
+  version: 1
+
+outputs:
+- name: "Draw PCBs"
+  type: pdf_pcb_print
+  layers: all
+  options:
+    separated: true
+
+- name: "Draw schematics"
+  type: pdf_sch_print
+
+- name: "BOM"
+  type: 'ibom'
