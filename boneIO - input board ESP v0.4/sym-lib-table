@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "P82B715DR")(type "Legacy")(uri "${KIPRJMOD}/Library/P82B715DR.lib")(options "")(descr ""))
+  (lib (name "ACT45B-510-2P-TL003")(type "Legacy")(uri "${KIPRJMOD}/Library/ACT45B-510-2P-TL003.lib")(options "")(descr ""))
+  (lib (name "TL3330AF130QG")(type "Legacy")(uri "${KIPRJMOD}/Library/switch/TL3330AF130QG.lib")(options "")(descr ""))
+  (lib (name "SN74LVC1G3157")(type "Legacy")(uri "${KIPRJMOD}/Library/SN74LVC1G3157.lib")(options "")(descr ""))
+)

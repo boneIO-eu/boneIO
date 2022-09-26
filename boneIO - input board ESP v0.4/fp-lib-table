@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name "ESP32")(type "KiCad")(uri "${KIPRJMOD}/Library/ESP32.pretty")(options "")(descr ""))
+  (lib (name "Library")(type "KiCad")(uri "${KIPRJMOD}/Library.pretty")(options "")(descr ""))
+  (lib (name "switch")(type "KiCad")(uri "${KIPRJMOD}/Library/switch")(options "")(descr ""))
+  (lib (name "rs485")(type "KiCad")(uri "${KIPRJMOD}/Library/rs485.pretty")(options "")(descr ""))
+  (lib (name "Library2")(type "KiCad")(uri "${KIPRJMOD}/Library")(options "")(descr ""))
+)
